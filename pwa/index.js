@@ -1,10 +1,8 @@
-async function getPublicKey() {
-  const { key } = await fetch("/push/key", {
-    headers: {
-      Accept: "application/json",
-    },
-  }).then((r) => r.json());
-  return key;
+async function askPermission() {
+  const permission = await Notification.requestPermission();
+  if (permission === "granted") {
+    registerServiceWorker();
+  }
 }
 
 async function registerServiceWorker() {
@@ -21,11 +19,13 @@ async function registerServiceWorker() {
   await saveSubscription(subscription);
 }
 
-async function askPermission() {
-  const permission = await Notification.requestPermission();
-  if (permission === "granted") {
-    registerServiceWorker();
-  }
+async function getPublicKey() {
+  const key = await fetch("http://localhost:3000/webpush/key", {
+    headers: {
+      Accept: "application/json",
+    },
+  }).then((r) => r.text());
+  return key;
 }
 
 /**
@@ -33,7 +33,7 @@ async function askPermission() {
  * @returns {Promise<void>}
  */
 async function saveSubscription(subscription) {
-  await fetch("/push/subscribe", {
+  await fetch("http://localhost:3000/webpush/subscribe", {
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -42,3 +42,5 @@ async function saveSubscription(subscription) {
     body: subscription.toJSON(),
   });
 }
+
+askPermission();
