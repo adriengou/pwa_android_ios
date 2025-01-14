@@ -1,0 +1,42 @@
+{
+  "packageId": "io.github.adriengou.twa",
+  "host": "adriengou.github.io",
+  "name": "pwa example",
+  "launcherName": "pwaex",
+  "display": "fullscreen",
+  "themeColor": "#8936FF",
+  "themeColorDark": "#000000",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#2EC6FE",
+  "enableNotifications": true,
+  "startUrl": "/pwa_android_ios/",
+  "iconUrl": "https://adriengou.github.io/pwa_android_ios/pwa_icon.svg",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "/home/adrien/Documents/repos/pwa_android_ios/android/android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "1",
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://adriengou.github.io/pwa_android_ios/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://adriengou.github.io/pwa_android_ios/",
+  "minSdkVersion": 21,
+  "orientation": "portrait",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "appVersion": "1"
+}
