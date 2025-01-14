@@ -11,13 +11,7 @@
 <body>
   <h1>Example PWA</h1>
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js')
-        .then((res) => console.log('Service worker registered.', res))
-        .catch((err) => console.log('Service worker not registered.', err));
-    }
-  </script>
+  <script src="index.js" type="module"></script>
 </body>
 
 </html>
